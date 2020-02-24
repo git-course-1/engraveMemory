@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:tabPageSample="clr-namespace:EngraveMemory.TabPageSample;assembly=EngraveMemory"
+            NavigationPage.BackButtonTitle="  "
+            ItemsSource="{Binding Path=TabPageVm.Pages}"
+            Navigation="{Binding Path=Navigation, Mode=OneWayToSource}"
+            x:Class="EngraveMemory.TabPageSample.HomePage"
+            SelectedItem="{Binding Path=TabPageVm.SelectedPage, Mode=TwoWay}">
+    <TabbedPage.ItemTemplate>
+        <tabPageSample:TabPageItemTemplateSelector>
+
+
+            <tabPageSample:TabPageItemTemplateSelector.FirstPage>
+                <DataTemplate>
+                    <NavigationPage Icon="plus"
+                                    BackButtonTitle="  ">
+                        <x:Arguments>
+                            <tabPageSample:FirstPage NavigationPage.BackButtonTitle="  "
+                                                     Navigation="{Binding Path=Navigation, Mode=OneWayToSource}" />
+                        </x:Arguments>
+                    </NavigationPage>
+                </DataTemplate>
+            </tabPageSample:TabPageItemTemplateSelector.FirstPage>
+
+            <tabPageSample:TabPageItemTemplateSelector.SecondPage>
+                <DataTemplate>
+                    <NavigationPage Icon="plus"
+                                    BackButtonTitle="  ">
+                        <x:Arguments>
+                            <tabPageSample:SecondPage NavigationPage.BackButtonTitle="  "
+                                                     Navigation="{Binding Path=Navigation, Mode=OneWayToSource}" />
+                        </x:Arguments>
+                    </NavigationPage>
+                </DataTemplate>
+            </tabPageSample:TabPageItemTemplateSelector.SecondPage>
+
+            <tabPageSample:TabPageItemTemplateSelector.ThirdPage>
+                <DataTemplate>
+                    <NavigationPage Icon="plus"
+                                    BackButtonTitle="  ">
+                        <x:Arguments>
+                            <tabPageSample:ThirdPage NavigationPage.BackButtonTitle="  "
+                                                     Navigation="{Binding Path=Navigation, Mode=OneWayToSource}" />
+                        </x:Arguments>
+                    </NavigationPage>
+                </DataTemplate>
+            </tabPageSample:TabPageItemTemplateSelector.ThirdPage>
+
+
+        </tabPageSample:TabPageItemTemplateSelector>
+    </TabbedPage.ItemTemplate>
+
+</TabbedPage>
