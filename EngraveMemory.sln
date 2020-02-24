@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngraveMemory.Android", "EngraveMemory.Android\EngraveMemory.Android.csproj", "{82490F72-003C-4F4E-9E65-D7A0D69ABF36}"
@@ -6,6 +6,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngraveMemory.iOS", "EngraveMemory.iOS\EngraveMemory.iOS.csproj", "{47020EC2-4973-4C2E-ACF5-B76BA3AB7820}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngraveMemory", "EngraveMemory\EngraveMemory.csproj", "{7920FDF6-BB3F-4AEE-8274-CFB862B014A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngraveMemory.Test", "EngraveMemory.Test\EngraveMemory.Test.csproj", "{B97E3076-522E-45FD-8727-BF03B7433F33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,5 +69,21 @@ Global
 		{7920FDF6-BB3F-4AEE-8274-CFB862B014A7}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
 		{7920FDF6-BB3F-4AEE-8274-CFB862B014A7}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
 		{7920FDF6-BB3F-4AEE-8274-CFB862B014A7}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Release|iPhone.Build.0 = Release|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{B97E3076-522E-45FD-8727-BF03B7433F33}.AppStore|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal

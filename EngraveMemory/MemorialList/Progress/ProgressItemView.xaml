@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EngraveMemory.MemorialList.ProgressItemView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <x:Double x:Key="BulletSize">8</x:Double>
+            <x:Single x:Key="BulletRadius">4</x:Single>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+        <ProgressBar Grid.Column="0" Progress="{Binding Path=Progress}"
+                     ProgressColor="{Binding Path=ProgressColor}" Margin="0" ScaleY="2"
+                     VerticalOptions="Center" BackgroundColor="{StaticResource ProgressGray}" />
+        
+        <Frame Grid.Column="1"
+               x:Name="AnimationFrame"
+               WidthRequest="{StaticResource BulletSize}"
+               HeightRequest="{StaticResource BulletSize}"
+               Padding="0"
+               IsVisible="{Binding Path=NeedRepeat}"
+               BackgroundColor="{StaticResource AppBlue}"
+               Opacity="0.36"
+               HorizontalOptions="Center" VerticalOptions="Center" HasShadow="False"
+               CornerRadius="{StaticResource BulletRadius}" />
+        
+        <Frame Grid.Column="1" WidthRequest="{StaticResource BulletSize}"
+               HeightRequest="{StaticResource BulletSize}"
+               Padding="0"
+               BackgroundColor="{Binding Path=Color}"
+               HorizontalOptions="Center" VerticalOptions="Center" HasShadow="False"
+               CornerRadius="{StaticResource BulletRadius}" />
+        
+        <Frame Grid.Column="1"
+               WidthRequest="{StaticResource BulletSize}"
+               HeightRequest="{StaticResource BulletSize}"
+               Padding="0"
+               IsVisible="{Binding Path=NeedRepeat}"
+               BackgroundColor="{StaticResource AppBlue}"
+               HorizontalOptions="Center" VerticalOptions="Center" HasShadow="False"
+               CornerRadius="{StaticResource BulletRadius}" />
+        
+        
+        </Grid>
+    </ContentView.Content>
+</ContentView>
