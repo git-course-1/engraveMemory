@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#f4f4f4"
+             xmlns:memorialList="clr-namespace:EngraveMemory.MemorialList;assembly=EngraveMemory"
+             x:Class="EngraveMemory.MemorialList.MemorialListView">
+    <ContentView.Content>
+        <Grid BackgroundColor="Transparent" Margin="0,10,0,0">
+            <ListView ItemsSource="{Binding Path=Rows}"
+                      BackgroundColor="Transparent"
+                      SeparatorVisibility="None"
+                      SelectionMode="None"
+
+                      CachingStrategy="RetainElement"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <memorialList:MemorialRowView />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Frame HeightRequest="60" WidthRequest="60"
+                   Padding="0"
+                   CornerRadius="30"
+                   Margin="20"
+                   HorizontalOptions="End"
+                   BackgroundColor="{StaticResource AppBlue}"
+                   VerticalOptions="End">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Path=AddMemorialCommand}" />
+                </Frame.GestureRecognizers>
+                <Image Source="plus" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="20"
+                       WidthRequest="20" />
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
