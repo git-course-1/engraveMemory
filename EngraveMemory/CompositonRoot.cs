@@ -22,11 +22,10 @@ namespace EngraveMemory
             builder.RegisterType<ProgressVm>().ExternallyOwned();
             builder.RegisterType<MemorialRepository>().ExternallyOwned();            
             builder.RegisterType<RootPageNavigation>().ExternallyOwned();
-            builder.RegisterType<MemorialFilterVm>().ExternallyOwned();
+            builder.RegisterType<MemorialFilterVm>().InstancePerDependency();
             builder.RegisterType<MemorialFilterSettings>().ExternallyOwned();
             builder.RegisterType<PeriodicUpdater>().ExternallyOwned();
             builder.RegisterEditMemorial();
-            builder.RegisterType<AppVm>().ExternallyOwned();
             builder.RegisterType<TabPageVm>().SingleInstance();
             builder.RegisterType<FirstPageVm>().SingleInstance();
             builder.RegisterType<SecondPageVm>().SingleInstance();
