@@ -20,8 +20,6 @@ namespace EngraveMemory.iOS
         {
             Xamarin.Forms.Forms.Init();
             Rg.Plugins.Popup.Popup.Init();
-            LoadApplication(new App());
-
             return base.FinishedLaunching(app, options);
         }
     }
