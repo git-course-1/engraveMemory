@@ -20,13 +20,12 @@ namespace EngraveMemory
             builder.RegisterType<MemorialListVm>().SingleInstance();
             builder.RegisterType<MemorialVm>().InstancePerDependency();
             builder.RegisterType<ProgressVm>().InstancePerDependency();
-            builder.RegisterType<MemorialRepository>().SingleInstance();            
+            builder.RegisterType<MemorialRepository>().InstancePerDependency();            
             builder.RegisterType<RootPageNavigation>().SingleInstance();
-            builder.RegisterType<MemorialFilterVm>().SingleInstance();
+            builder.RegisterType<MemorialFilterVm>().InstancePerDependency();
             builder.RegisterType<MemorialFilterSettings>().SingleInstance();
-            builder.RegisterType<PeriodicUpdater>().SingleInstance();
+            builder.RegisterType<PeriodicUpdater>().InstancePerDependency()();
             builder.RegisterEditMemorial();
-
             builder.RegisterType<AppVm>().SingleInstance();
             builder.RegisterType<TabPageVm>().SingleInstance();
             builder.RegisterType<FirstPageVm>().SingleInstance();
