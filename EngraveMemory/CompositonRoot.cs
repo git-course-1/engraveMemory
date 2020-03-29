@@ -17,17 +17,16 @@ namespace EngraveMemory
         {
             var builder = new ContainerBuilder();
             builder.Register(c => DependencyService.Get<ICompressImage>()).SingleInstance();
-            builder.RegisterType<MemorialListVm>().SingleInstance();
-            builder.RegisterType<MemorialVm>().InstancePerDependency();
-            builder.RegisterType<ProgressVm>().InstancePerDependency();
-            builder.RegisterType<MemorialRepository>().SingleInstance();            
-            builder.RegisterType<RootPageNavigation>().SingleInstance();
-            builder.RegisterType<MemorialFilterVm>().SingleInstance();
-            builder.RegisterType<MemorialFilterSettings>().SingleInstance();
-            builder.RegisterType<PeriodicUpdater>().SingleInstance();
+            builder.RegisterType<MemorialListVm>().ExternallyOwned();
+            builder.RegisterType<MemorialVm>().ExternallyOwned();
+            builder.RegisterType<ProgressVm>().ExternallyOwned();
+            builder.RegisterType<MemorialRepository>().ExternallyOwned();            
+            builder.RegisterType<RootPageNavigation>().ExternallyOwned();
+            builder.RegisterType<MemorialFilterVm>().ExternallyOwned();
+            builder.RegisterType<MemorialFilterSettings>().ExternallyOwned();
+            builder.RegisterType<PeriodicUpdater>().ExternallyOwned();
             builder.RegisterEditMemorial();
-
-            builder.RegisterType<AppVm>().SingleInstance();
+            builder.RegisterType<AppVm>().ExternallyOwned();
             builder.RegisterType<TabPageVm>().SingleInstance();
             builder.RegisterType<FirstPageVm>().SingleInstance();
             builder.RegisterType<SecondPageVm>().SingleInstance();

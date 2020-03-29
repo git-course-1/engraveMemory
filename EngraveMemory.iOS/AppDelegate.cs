@@ -18,10 +18,8 @@ namespace EngraveMemory.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            Xamarin.Forms.Forms.Init();
             Rg.Plugins.Popup.Popup.Init();
             LoadApplication(new App());
-
             return base.FinishedLaunching(app, options);
         }
     }
