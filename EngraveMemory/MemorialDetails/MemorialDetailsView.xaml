@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:EngraveMemory.Converters;assembly=EngraveMemory"
+             xmlns:memorialList="clr-namespace:EngraveMemory.MemorialList;assembly=EngraveMemory"
+             x:Class="EngraveMemory.MemorialDetails.MemorialDetailsView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <converters:NullToVisiblityConverter x:Key="NullToVisiblityConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid RowSpacing="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Editor Placeholder="Заголовок" PlaceholderColor="Silver" Text="{Binding Path=Header}"
+                    FontAttributes="Bold" FontSize="18"
+                    AutoSize="TextChanges" />
+
+            <Editor Grid.Row="1" Placeholder="Заметка" PlaceholderColor="Silver" Text="{Binding Path=Text}"
+                    AutoSize="TextChanges" />
+
+            <Grid Grid.Row="2" IsVisible="{Binding Path=HasProgress}" Padding="0">
+                <memorialList:ProgressView BindingContext="{Binding Path=Progress}" />
+            </Grid>
+
+            <Button Grid.Row="3" BackgroundColor="{StaticResource AppBlue}" TextColor="White"
+                    Text="{Binding Path=ButtonText}"
+                    Command="{Binding Path=RepeatCommand}"
+                    Opacity="{Binding Path=Progress.NextRepeatPoint.NeedRepeat, FallbackValue=0, Converter={StaticResource BoolToOpacityConverter}}" />
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>
