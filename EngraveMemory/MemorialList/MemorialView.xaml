@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:memorialList="clr-namespace:EngraveMemory.MemorialList;assembly=EngraveMemory"
+             x:Class="EngraveMemory.MemorialList.MemorialView">
+    <ContentView.Content>
+        <Frame HasShadow="False" IsVisible="{Binding Converter={StaticResource NullToVisiblityConverter}}" 
+               BackgroundColor="White"
+               BorderColor="Transparent"
+               Padding="15"               
+               CornerRadius="9">
+            <Frame.Triggers>
+                <DataTrigger TargetType="Frame" Binding="{Binding Path=Progress.Point4.Repeated}" Value="True" >
+                    <Setter Property="BackgroundColor" Value="#f4f4f4"/>
+                    <Setter Property="BorderColor" Value="#e0e0e0"></Setter>
+                </DataTrigger>
+                <DataTrigger TargetType="Frame" Binding="{Binding Path=Progress.NextRepeatPoint.NeedRepeat}" Value="True" >
+                    <Setter Property="BorderColor" Value="{StaticResource AppBlue}"/>
+                </DataTrigger>
+                <DataTrigger TargetType="Frame" Binding="{Binding Path=Progress.NextRepeatPoint.NeedRepeat}" Value="False" >
+                    <Setter Property="BorderColor" Value="White"/>
+                </DataTrigger>
+                    
+            </Frame.Triggers>            
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Path=ShowDetailsCommand}"/>
+            </Frame.GestureRecognizers>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+                
+                <Label Text="{Binding Path=Header, Mode=TwoWay}" 
+                       MaxLines="2"
+                       FontAttributes="Bold" TextColor="Black" LineBreakMode="TailTruncation" Margin="0,0,0,14"/>
+                
+                <Label Grid.Row="0" Text="Looooooooooooooooooooooooooooooooooooooooooooooooooong text for size" 
+                       Opacity="0"
+                       MaxLines="2"
+                       FontAttributes="Bold" TextColor="Black" LineBreakMode="TailTruncation" Margin="0,0,0,14"/>
+                
+                <Label Grid.Row="1" Text="{Binding Path=Progress.NextRepeatPoint.TimeToRepeat, StringFormat='Осталось: {0}'}"
+                       HorizontalOptions="Start"
+                       HorizontalTextAlignment="End"
+                       VerticalOptions="End"
+                       IsVisible="{Binding Path=Progress.NextRepeatPoint.NeedRepeat, Converter={StaticResource InvertBoolConverter}}"
+                       Margin="0,0,0,0" FontSize="13" TextColor="#686868"/>
+                
+                <Label Grid.Row="1" Text="Время повторить"
+                       HorizontalOptions="Start"
+                       IsVisible="{Binding Path=Progress.NextRepeatPoint.NeedRepeat, FallbackValue=false}"
+                       HorizontalTextAlignment="End"
+                       VerticalOptions="End"
+                       Margin="0,0,0,0" FontSize="13" TextColor="{StaticResource AppBlue}"/>
+                
+                <Label Grid.Row="1" Text="Завершено"
+                       HorizontalOptions="Start"
+                       VerticalOptions="End"
+                       IsVisible="{Binding Path=Progress.Point4.Repeated}"
+                       HorizontalTextAlignment="End"
+                       Margin="0,0,0,0" FontSize="13" TextColor="{StaticResource AppBlue}"/>
+                
+                <memorialList:ProgressView Grid.Row="2" Margin="0,0,0,0" BindingContext="{Binding Path=Progress}" VerticalOptions="Start"/>
+                
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

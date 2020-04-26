@@ -1,7 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:EngraveMemory" x:Class="EngraveMemory.MainPage">
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:memorialList="clr-namespace:EngraveMemory.MemorialList;assembly=EngraveMemory"
+             NavigationPage.BackButtonTitle=" "
+             x:Class="EngraveMemory.MainPage">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="46" />
+            </Grid.RowDefinitions>
+
+            <Label
+                Text="Remember me"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                HorizontalOptions="Center"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="Black" />
+
+            <ImageButton
+                HorizontalOptions="End"
+                Margin="0,0,10,0"
+                Source="filter"
+                WidthRequest="28"
+                BackgroundColor="Transparent"
+                Command="{Binding Path=ShowFilterCommand}"
+                HeightRequest="28" />
+        </Grid>
+    </NavigationPage.TitleView>
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <memorialList:MemorialListView Navigation="{Binding Path=Navigation, Mode=OneWayToSource}"/>
     </StackLayout>
 </ContentPage>
