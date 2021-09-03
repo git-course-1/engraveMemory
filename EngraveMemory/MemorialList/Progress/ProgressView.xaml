@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:memorialList="clr-namespace:EngraveMemory.MemorialList;assembly=EngraveMemory"
+             x:Class="EngraveMemory.MemorialList.ProgressView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <x:Double x:Key="BulletSize">8</x:Double>
+            <x:Single x:Key="BulletRadius">4</x:Single>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="0.2*" />
+                <ColumnDefinition Width="0.3*" />
+                <ColumnDefinition Width="0.4*" />
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Column="0" WidthRequest="{StaticResource BulletSize}"
+                   HeightRequest="{StaticResource BulletSize}" Padding="0"
+                   BackgroundColor="{Binding Path=Point0.Color}"
+                   HorizontalOptions="Center" VerticalOptions="Center" HasShadow="False"
+                   CornerRadius="{StaticResource BulletRadius}" />
+
+            <memorialList:ProgressItemView Grid.Column="4" BindingContext="{Binding Path=Point4}"/>
+            <memorialList:ProgressItemView Grid.Column="3" BindingContext="{Binding Path=Point3}"/>
+            <memorialList:ProgressItemView Grid.Column="2" BindingContext="{Binding Path=Point2}"/>
+            <memorialList:ProgressItemView Grid.Column="1" BindingContext="{Binding Path=Point1}"/>
+           
+        </Grid>
+    </ContentView.Content>
+</ContentView>
